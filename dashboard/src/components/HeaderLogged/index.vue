@@ -32,7 +32,7 @@
 import { computed } from '@vue/reactivity'
 import { useRouter } from 'vue-router'
 import useStore from '../../hooks/useStore'
-import { cleanCurrentUser } from '../../store/user'
+import { cleancurrentUser } from '../../store/user'
 
 export default {
   setup () {
@@ -40,16 +40,16 @@ export default {
     const store = useStore('User')
 
     const logoutLabel = computed(() => {
-      if (!store.currenUser.name) {
+      if (!store.currentUser.name) {
         return '...'
       }
 
-      return (store.currenUser.name + ' (sair)')
+      return (store.currentUser.name + ' (sair)')
     })
 
     function handleLogout () {
       localStorage.removeItem('token')
-      cleanCurrentUser()
+      cleancurrentUser()
       router.push({ name: 'Home' })
     }
 
