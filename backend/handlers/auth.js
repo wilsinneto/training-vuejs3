@@ -3,6 +3,7 @@ const jwt = require('jsonwebtoken')
 function CreateAuthHandler (db) {
   async function login (ctx) {
     const { email, password } = ctx.request.body
+
     const user = await db.readOneByEmail('users', email)
 
     if (!user) {
