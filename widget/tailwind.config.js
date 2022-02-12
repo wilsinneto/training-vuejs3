@@ -5,7 +5,7 @@ module.exports = {
   purge: [
     './src/**/*.html',
     './src/**/*.vue',
-    './src/**/*.jsx',
+    './src/**/*.jsx'
   ],
   presets: [],
   darkMode: false, // or 'media' or 'class'

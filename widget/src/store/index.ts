@@ -1,4 +1,4 @@
-import { reactive, readonly } from "vue"
+import { reactive, readonly } from 'vue'
 
 export type StoreState = {
     currentComponent: string;
@@ -10,47 +10,47 @@ export type StoreState = {
 }
 
 const initialState = {
-    currentComponent: 'SelectFeedbackType',
-    message: '',
-    feedbackType: '',
-    fingerprint: '',
-    apiKey: '',
-    currentPage: '',
+  currentComponent: 'SelectFeedbackType',
+  message: '',
+  feedbackType: '',
+  fingerprint: '',
+  apiKey: '',
+  currentPage: ''
 }
 
 const state = reactive<StoreState>({ ...initialState })
 
 export function setCurrentComponent (component: string): void {
-    state.currentComponent = component
+  state.currentComponent = component
 }
 
 export function setMessage (message: string): void {
-    state.message = message
+  state.message = message
 }
 
 export function setFeedbackType (type: string): void {
-    state.feedbackType = type
+  state.feedbackType = type
 }
 
-export function setFingerprint (fingerprint: string) {
+export function setFingerprint (fingerprint: string): void {
   state.fingerprint = fingerprint
 }
 
-export function setApiKey (apiKey: string) {
+export function setApiKey (apiKey: string): void {
   state.apiKey = apiKey
 }
 
-export function setCurrentPage (page: string) {
+export function setCurrentPage (page: string): void {
   state.currentPage = page
 }
 
 export function resetStore (): void {
-    setCurrentComponent(initialState.currentComponent)
-    setMessage(initialState.message)
-    setFeedbackType(initialState.feedbackType)
-    setFingerprint(initialState.fingerprint)
-    setApiKey(initialState.apiKey)
-    setCurrentPage(initialState.currentPage)
+  setCurrentComponent(initialState.currentComponent)
+  setMessage(initialState.message)
+  setFeedbackType(initialState.feedbackType)
+  setFingerprint(initialState.fingerprint)
+  setApiKey(initialState.apiKey)
+  setCurrentPage(initialState.currentPage)
 }
 
 export default readonly(state)
