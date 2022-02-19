@@ -25,6 +25,7 @@ import palette from '../../../palette'
 
 interface SetupReturn {
   goBack: () => void;
+  palette: Record<string, string>;
 }
 
 export default defineComponent({
